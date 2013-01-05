@@ -1,0 +1,29 @@
+{
+  "name": "osconfig",
+  "version": "0.0.1",
+  "description": "load installation config files for nput",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "tap": "0.3.3"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:st-luke/osconfig.git"
+  },
+  "keywords": [
+    "nput",
+    "provision"
+  ],
+  "author": {
+    "name": "Luke Arduini",
+    "email": "luke.arduini@me.com",
+    "url": "http://luke.xxx"
+    },
+  "license": "MIT"
+}
