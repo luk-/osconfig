@@ -1,6 +1,6 @@
 # osconfig
 
-Read config files with OS specific installation instructions for use with nput.
+Read config files with OS specific installation instructions for use with [nput](https://github.com/st-luke/nput)
 
 #### Installation:
 
