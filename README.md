@@ -1,5 +1,7 @@
 # osconfig
 
+[![Build Status](https://secure.travis-ci.org/st-luke/osconfig.png)](http://travis-ci.org/st-luke/osconfig)
+
 Read config files with OS specific installation instructions for use with [nput](https://github.com/st-luke/nput)
 
 #### Installation:
