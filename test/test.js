@@ -1,23 +1,21 @@
-var test = require('tap').test
+var assert = require('assert')
 var osconfig = require('../')
 
-var dir = ('./fixture')
-var list = osconfig.list(dir)
+var list = osconfig.list(__dirname + '/fixture')
 
-var os_list = JSON.stringify({ 
-  cent:   { '6.0': 'fixture/centos6.json' },
-  debian: { '6.0': 'fixture/squeeze6.json' },
-  ubuntu: { '10.0': 'fixture/ubuntu10.json' } 
-})
+var os_list = { 
+  cent:   { '6.0': __dirname + '/fixture/centos6.json' },
+  debian: { '6.0': __dirname + '/fixture/squeeze6.json' },
+  ubuntu: { '10.0': __dirname + '/fixture/ubuntu10.json' } 
+}
 
 var os = osconfig.load({
   os: 'debian',
   version: '6.0',
-  dir: './fixture'
+  dir: __dirname + '/fixture'
 })
 
-
-var squeeze = JSON.stringify({
+var squeeze = {
   "os": {
     "name": "debian",
     "version": "6.0"
@@ -38,15 +36,7 @@ var squeeze = JSON.stringify({
       "/usr/bin/env make install -C node_src"
     ]
   }
-})
+}
 
-
-test('ensure file list', function (t) {
-  t.equal(JSON.stringify(list), os_list)
-  t.end()
-})
-
-test('ensure os config file', function (t) {
-  t.equal(JSON.stringify(os), squeeze)
-  t.end()
-})
+assert.deepEqual(list, os_list, 'os list is not equal')
+assert.deepEqual(os, squeeze, 'loaded os is not equal')
