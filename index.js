@@ -29,7 +29,7 @@ osconfig.load = function (options) {
   var os_list = this.list(dir)
   var load = os_list[os][version]
   if (!load) 
-    return console.log('%s@%s not found', os, version)
+    throw new Error(os + '@' + version + ' not found')
   var file = fs.readFileSync(load, 'utf8')
   file = JSON.parse(file)
   return file
